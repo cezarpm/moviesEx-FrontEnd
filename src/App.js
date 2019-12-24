@@ -1,29 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import MovieList from './Components/Movie-List/Movie-List';
-
-import getMovies from './service/movieExApi';
-
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 
+import Home from './Components/Pages/Home/Home';
+import WatchedMovies from './Components/Pages/WatchedMovies/WatchedMovies';
+import NotWatchedMovies from './Components/Pages/NotWatchedMovies/NotWatchedMovies';
+
 function App() {
-  const [movies, setmovies] = useState([]);
-
-  useEffect(() => {
-    async function loadMovies() {
-      const response = await getMovies.get('/movies');
-      console.log(response.data);
-
-      setmovies(response.data);
-    }
-
-    loadMovies();
-  }, []);
   return (
-    <>
-      <div className='container'>
-        <MovieList movies={movies} />
-      </div>
-    </>
+    <Router>
+      <Switch>
+        <Route path="/notwatchedmovies" exact>
+          <NotWatchedMovies />
+        </Route>
+        <Route path="/watchedmovies" exact>
+          <WatchedMovies />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

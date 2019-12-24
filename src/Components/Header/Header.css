@@ -1,0 +1,14 @@
+.header {
+  background-color: #44475a;
+  padding: 15px;
+}
+
+.header__ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header__ul__item a {
+  color: #bd93f9;
+}
+
