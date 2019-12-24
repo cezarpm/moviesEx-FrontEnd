@@ -3,6 +3,8 @@ import MovieList from './Components/Movie-List/Movie-List';
 
 import getMovies from './service/movieExApi';
 
+import './App.css';
+
 function App() {
   const [movies, setmovies] = useState([]);
 
@@ -10,7 +12,7 @@ function App() {
     async function loadMovies() {
       const response = await getMovies.get('/movies');
       console.log(response.data);
-      
+
       setmovies(response.data);
     }
 
@@ -18,7 +20,9 @@ function App() {
   }, []);
   return (
     <>
-      <MovieList movies={movies} />
+      <div className='container'>
+        <MovieList movies={movies} />
+      </div>
     </>
   );
 }

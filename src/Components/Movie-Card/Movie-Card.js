@@ -1,14 +1,16 @@
 import React from 'react';
 
+import './Movie-Card.css';
+
 function MovieCard(props) {
   return (
-    <li>
-      <img src={props.img} alt='movie'></img>
-
-      <h1>{props.name}</h1>
-      <p>{props.rank}</p>
-      <p>{props.score}</p>
-
+    <li className="movie-card">
+      <div className="card-container"> 
+        <h1 className="title">{props.name}</h1>
+        <img className="card-img" src={props.img} alt="movie"></img>
+        <p>#{props.rank}</p>
+        <p>{props.score}</p>
+      </div>
     </li>
   );
 }

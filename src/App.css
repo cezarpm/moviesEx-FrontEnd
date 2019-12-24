@@ -1,1 +1,15 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: #282a36;
+    font-family: 'Montserrat', sans-serif;
+}
 
+ul{
+    list-style: none;
+}
+
+.container{
+    margin: 0 auto;
+    text-align: center;
+}
