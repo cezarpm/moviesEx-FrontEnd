@@ -4,7 +4,7 @@ import MovieList from '../../Movie-List/Movie-List';
 import Header from '../../Header/Header';
 import './WatchedMovies.css';
 
-import getMovies from '../../../service/movieExApi';
+import { getMovies } from '../../../service/movieExApi';
 
 function Home() {
   const [movies, setmovies] = useState([]);

@@ -1,8 +1,19 @@
 import React from 'react';
-
 import './Movie-Card.css';
 
+import { updateMovie } from '../../service/movieExApi';
+
+
 function MovieCard(props) {
+  const watched = () => {
+    const title = props.title;
+    const watched = props.watched
+
+    
+    
+    updateMovie(title, watched);
+  }
+
   return (
     <li className="movie-card">
       <div className="card-container"> 
@@ -12,8 +23,8 @@ function MovieCard(props) {
         <p>{props.score}</p>
 
         <div>
-          <button>Assistido</button>
-          <button>Não Assistido</button>
+          <button onClick={watched}>Assistido</button>
+          <button onClick={watched}>Não Assistido</button>
         </div>
       </div>
     </li>

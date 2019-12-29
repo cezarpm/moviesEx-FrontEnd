@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 import MovieList from '../../Movie-List/Movie-List';
 import Header from '../../Header/Header';
+import './NotWatchedMovies.css'
 
-import getMovies from '../../../service/movieExApi';
+import { getMovies } from '../../../service/movieExApi';
 
 function Home() {
   const [movies, setmovies] = useState([]);
