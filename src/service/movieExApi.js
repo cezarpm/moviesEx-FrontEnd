@@ -1,7 +1,17 @@
 import axios from 'axios';
 
-const getMovies = axios.create({
-  baseURL: 'http://localhost:8000',
+const axiosInstance = axios.create({
+  baseURL: 'http://localhost:9000'
 });
+
+const getMovies = () => {
+  return axiosInstance.get('/movies')
+    .then(res => {
+      return res
+    })
+    .catch(err => {
+      if (err) console.log(err);
+    });
+};
 
 export default getMovies;

@@ -10,6 +10,11 @@ function MovieCard(props) {
         <img className="card-img" src={props.img} alt="movie"></img>
         <p>#{props.rank}</p>
         <p>{props.score}</p>
+
+        <div>
+          <button>Assistido</button>
+          <button>Não Assistido</button>
+        </div>
       </div>
     </li>
   );

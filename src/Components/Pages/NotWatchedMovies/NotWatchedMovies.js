@@ -10,10 +10,9 @@ function Home() {
 
   useEffect(() => {
     async function loadMovies() {
-      const response = await getMovies.get('/movies/notwatched');
-      
-      
-      setmovies(response.data);
+      const response = await getMovies();
+
+      setmovies(response.data.moviesNotWatched[0]);
     }
 
     loadMovies();
@@ -22,7 +21,7 @@ function Home() {
     <>
       <Header />
       <div className="container">
-        <MovieList movies={movies} />
+        <MovieList classeName="container" movies={movies} />
       </div>
     </>
   );

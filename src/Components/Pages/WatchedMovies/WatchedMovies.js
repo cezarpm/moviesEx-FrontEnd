@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import MovieList from '../../Movie-List/Movie-List';
 import Header from '../../Header/Header';
+import './WatchedMovies.css';
 
 import getMovies from '../../../service/movieExApi';
 
@@ -10,9 +11,9 @@ function Home() {
 
   useEffect(() => {
     async function loadMovies() {
-      const response = await getMovies.get('/movies/watched');
+      const response = await getMovies();
 
-      setmovies(response.data);
+      setmovies(response.data.moviesWatched[0]);
     }
 
     loadMovies();
@@ -21,7 +22,7 @@ function Home() {
     <>
       <Header />
       <div className="container">
-        <MovieList movies={movies} />
+        <MovieList classeName="container" movies={movies} />
       </div>
     </>
   );

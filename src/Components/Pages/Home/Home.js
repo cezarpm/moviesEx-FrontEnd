@@ -11,10 +11,9 @@ function Home() {
 
   useEffect(() => {
     async function loadMovies() {
-      const response = await getMovies.get('/movies');
-      console.log('kkkeae');
+      const response = await getMovies();
 
-      setmovies(response.data);
+      setmovies(response.data.movies[0]);
     }
 
     loadMovies();
